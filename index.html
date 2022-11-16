@@ -3,12 +3,30 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guvi Project</title>
+    <title>GUVI Project</title>
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
+
+    <div class="container">
+        <h1 class="label"> User Login</h1>
+        <form name="myForm" action="" class="login_form" method="post" onsubmit="return validateForm()">
+            <div class="font"> Email or Phone</div>
+            <input type="text" name="email">
+            <div id="email_error">Please fill up your Email or Phone</div>
+
+
+            <div class="font font2">Password</div>
+            <input type="password" name="password">
+            <div id="pass_error">Please Enter the vaild Password</div>
+            <button type="submit">Login</button>
+
+        </form>
+    </div>
+
+    <script src="js/login.js"></script>
 
 </body>
 
