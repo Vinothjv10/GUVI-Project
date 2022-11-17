@@ -68,7 +68,7 @@ else if($upswd1 == $upswd2){
                      "Phone_number" => $phno]
                   );
 
-      echo "New record inserted sucessfully";
+      echo "<script> New record inserted sucessfully </script>";
 
      }
     else 
