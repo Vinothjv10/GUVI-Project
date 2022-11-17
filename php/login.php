@@ -28,6 +28,7 @@ else{
             // echo "<script>alert('Logged');</script>";
             header("Location: http://localhost/GUVI/profile.html");
             // header('location: http://'. $_SERVER['HTTP_HOST'].'/GUVI/profile.html');
+
         }
         else{
             echo "<h2> Invaild Email or password </h2>";
