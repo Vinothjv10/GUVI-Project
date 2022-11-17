@@ -4,11 +4,13 @@ $email= $_SESSION['email'];
 
 require_once __DIR__ . '\composer\vendor\autoload.php';
 
-$con = new MongoDB\Client("mongodb://localhost:27017");
-
-$db = $con->guvi;
-
-$c = $db->collection;
+$client = new MongoDB\Client(
+   'mongodb+srv://vinothjv10:vinothJV10@cluster0.qlizd9h.mongodb.net/?retryWrites=true&w=majority');
+ 
+ $db = $client->guvi;
+ 
+ 
+ $c = $db->guvi_db;
 
 // echo $email;
 
