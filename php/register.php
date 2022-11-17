@@ -1,6 +1,5 @@
 <?php
 
-<<<<<<< HEAD
 $name = $_POST['name'];
 $email  = $_POST['email'];
 $upswd1 = $_POST['upswd1'];
@@ -87,26 +86,5 @@ else
  echo "All field are required";
  die();
 }
-=======
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    $conn = new mysqli('localhost','root','','testing');
-
-    if($conn->connect_error)
-    {
-        die('Connection Failed  : '.$conn->connect_error);
-    }
-    else{
-        $stmt = $conn->prepare("insert into registration(name, email, password)
-        value(?, ?, ?)");
-        $stmt->bind_param("sss",$name, $email,$password);
-        $stmt->execute();
-        echo "Registration Successfully...";
-        $stmt->close();
-        $conn->close();
-    }
->>>>>>> 159e12bbf9c6783327dc4f401f0e08e48b4f1e5a
 
 ?>

@@ -10,18 +10,20 @@ $c = $db->collection;
 
 $cursor = $c->find();
 
-foreach ($cursor as $document) {
-    echo $document["Name"] . "  ",
-         $document["email"] . "  " ,
-         $document["Age"] . "  ",
-         $document["DOB"] . "  ",
-         $document["Phone_number"]."<br>";
+
+ foreach ($cursor as $document) {
+     echo '<tr>$document["_id"] . "  "</tr>
+          ';
  }
+ ?>
 
-// $m = new MongoDB\Driver\Manager("mongodb://localhost:27017");
-	
-// $db = $m->guvi;
+<!-- <?php while($data = $cursor->fetch_assoc()) : ?>
+    <tr>
+        <td> <?php echo $data['Name']; ?> </td>
+        <td> <?php echo $data['email']; ?> </td>
+        <td> <?php echo $data['Age']; ?> </td>
+        <td> <?php echo $data['DOB']; ?> </td>
+        <td> <?php echo $data['Name']; ?> </td>
 
-// $collection = $db->createCollection("mycol");
-
-?>
+    </tr>
+<?php endwhile; ?> -->

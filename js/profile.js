@@ -7,7 +7,7 @@ $(document).ready(function () {
         url: "php/profile.php",
         dataType: "html",
         success: function (data) {
-
+            $('#my-data').html(data);
         }
     })
 });
