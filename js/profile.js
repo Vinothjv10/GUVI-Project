@@ -8,6 +8,7 @@ $(document).ready(function () {
         dataType: "html",
         success: function (data) {
             $('#my-data').html(data);
+
         }
     })
 });

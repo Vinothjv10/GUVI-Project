@@ -1,10 +1,12 @@
 <?php
+session_start();
 
 $email = $_POST['email'];
 $password = $_POST['upswd1'];
 
-$con = new mysqli("localhost","root","","guvi");
+$con = new mysqli("localhost","root","","guvi_db");
 
+$_SESSION['email'] = $email;
 
 if($con->connect_error)
 {
@@ -23,9 +25,9 @@ else{
         $data = $stmt_result->fetch_assoc();
         if($data['upswd1'] === $password)
         {
-            echo "<script>alert('Logged');</script>";
-            
-            header('location: http://'. $_SERVER['HTTP_HOST'].'/GUVI/profile.html');
+            // echo "<script>alert('Logged');</script>";
+            header("Location: http://localhost/GUVI/profile.html");
+            // header('location: http://'. $_SERVER['HTTP_HOST'].'/GUVI/profile.html');
 
         }
         else{

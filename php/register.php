@@ -2,7 +2,7 @@
 
 $name = $_POST['name'];
 $email  = $_POST['email'];
-$upswd1 = $_POST['upswd1'];
+$upswd1 = $_POST['password'];
 $upswd2 = $_POST['upswd2'];
 $age = $_POST['age'];
 $dob = $_POST['dob'];
@@ -19,13 +19,13 @@ $c = $db->collection;
 
 
 
-if (!empty($name) || !empty($email) || !empty($upswd1) || !empty($upswd2) )
+if (!empty($email) || !empty($upswd1)  )
 {
 
 $host = "localhost";
 $dbusername = "root";
 $dbpassword = "";
-$dbname = "guvi";
+$dbname = "guvi_db";
 
 
 
@@ -43,7 +43,7 @@ else if($upswd1 != $upswd2)
 else if($upswd1 == $upswd2){
 
   $SELECT = "SELECT email From register Where email = ? Limit 1";
-  $INSERT = "INSERT Into register (name , email ,upswd1, upswd2 )values(?,?,?,?)";
+  $INSERT = "INSERT Into register ( email ,upswd1 )values(?,?)";
 
 //Prepare statement
      $stmt = $conn->prepare($SELECT);
@@ -57,7 +57,7 @@ else if($upswd1 == $upswd2){
       if ($rnum==0) {
       $stmt->close();
       $stmt = $conn->prepare($INSERT);
-      $stmt->bind_param("ssss", $name,$email,$upswd1,$upswd2);
+      $stmt->bind_param("ss",$email,$upswd1);
       $stmt->execute();
 
       $c->insertOne(["Name" => $name,
@@ -69,8 +69,6 @@ else if($upswd1 == $upswd2){
                   );
 
       echo "New record inserted sucessfully";
-
-      
 
      }
     else 

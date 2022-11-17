@@ -1,4 +1,6 @@
 <?php
+session_start();
+$email= $_SESSION['email'];
 
 require_once __DIR__ . '\composer\vendor\autoload.php';
 
@@ -8,22 +10,25 @@ $db = $con->guvi;
 
 $c = $db->collection;
 
+// echo $email;
+
 $cursor = $c->find();
 
 
  foreach ($cursor as $document) {
-     echo '<tr>$document["_id"] . "  "</tr>
-          ';
+    if($email == $document["email"])
+    {
+         echo $document["_id"] . "  ",
+          $document["Name"] . "  ",
+          $document["email"] . "  " ,
+          $document["Age"] . "  ",
+          $document["DOB"] . "  ",
+          $document["Phone_number"]." ";
+    }
+
  }
  ?>
 
-<!-- <?php while($data = $cursor->fetch_assoc()) : ?>
-    <tr>
-        <td> <?php echo $data['Name']; ?> </td>
-        <td> <?php echo $data['email']; ?> </td>
-        <td> <?php echo $data['Age']; ?> </td>
-        <td> <?php echo $data['DOB']; ?> </td>
-        <td> <?php echo $data['Name']; ?> </td>
 
-    </tr>
-<?php endwhile; ?> -->
+
+ 

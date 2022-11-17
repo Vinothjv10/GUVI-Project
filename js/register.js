@@ -1,8 +1,17 @@
-let name = document.forms['myForm']['name'];
-let email = document.forms['myForm']['email'];
-let password = document.forms['myForm']['password'];
-let repass = document.forms['myForm']['repass'];
 
-
-let email_error = document.getElementById('email_error');
-let pass_error = document.getElementById('pass_error');   
+$('#submit').on('click', function () {
+    $.ajax({
+        type: 'post',
+        url: 'php/register.php',
+        data: $('#myForm').serialize(),
+        success: function (response) {
+            alert("Your Successfully Signup");
+            // var url = "http://localhost/GUVI/login.html";
+            // $(location).attr('href', url);
+            console.log(response);
+        },
+        error: function () {
+            alert("error")
+        }
+    })
+})
