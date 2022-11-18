@@ -9,17 +9,18 @@ $dob = $_POST['dob'];
 $phno = $_POST['phno'];
 
 
-require_once __DIR__ . '\composer\vendor\autoload.php';
+require_once __DIR__ . 'C:\xampp\htdocs\GUVI-Project\composer\vendor\autoload.php';
 
 // $con = new MongoDB\Client("mongodb://localhost:27017");
 
 // $db = $con->guvi;
+// $c = $db->collection;
+
 
 $client = new MongoDB\Client(
-  'mongodb+srv://vinothjv10:vinothJV10@cluster0.qlizd9h.mongodb.net/?retryWrites=true&w=majority');
+  'mongodb+srv://vinothjv10:vinothJV10@cluster0.2piztu4.mongodb.net/?retryWrites=true&w=majority');
 
 $db = $client->guvi;
-
 
 $c = $db->guvi_db;
 

@@ -1,7 +1,10 @@
+$(document).ready(function () {
+    $("#myForm").validate();
+});
 
 $('#submit').on('click', function () {
     $.ajax({
-        type: 'post',
+        type: 'POST',
         url: 'php/register.php',
         data: $('#myForm').serialize(),
         success: function (response) {

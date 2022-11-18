@@ -26,7 +26,7 @@ else{
         if($data['upswd1'] === $password)
         {
             // echo "<script>alert('Logged');</script>";
-            header("Location: http://localhost/GUVI/profile.html");
+            header("Location: http://localhost/GUVI-Project/profile.html");
             // header('location: http://'. $_SERVER['HTTP_HOST'].'/GUVI/profile.html');
 
         }
