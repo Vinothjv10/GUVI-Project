@@ -81,3 +81,7 @@ body {
     border: 1px solid #EF9A9A;
     display: none;
 } */
+
+a {
+    margin: 10 px;
+}
