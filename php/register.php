@@ -67,6 +67,8 @@ else if($upswd1 == $upswd2){
       $stmt->bind_param("ss",$email,$upswd1);
       $stmt->execute();
 
+
+// sending information in Mangodb database
       $c->insertOne(["Name" => $name,
                      "email" => $email,
                      "password" => $upswd1,

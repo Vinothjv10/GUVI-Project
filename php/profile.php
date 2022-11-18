@@ -22,7 +22,7 @@ $client = new MongoDB\Client(
 
 $cursor = $c->find();
 
-
+// for selected user information getting
  foreach ($cursor as $document) {
     if($email == $document["email"])
     {

@@ -23,6 +23,8 @@ else{
     if($stmt_result->num_rows >0)
     {
         $data = $stmt_result->fetch_assoc();
+
+        // checking passwords are correct or not correct
         if($data['upswd1'] === $password)
         {
             // echo "<script>alert('Logged');</script>";
